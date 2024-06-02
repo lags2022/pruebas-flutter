@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
                 DiscoverProvider(videosRepository: videoPostRepository)
                   ..loadNextPage())
       ],
-      child: MaterialApp(
+      child: MaterialApp( 
           title: 'TokTik',
           debugShowCheckedModeBanner: false,
           theme: AppTheme().getTheme(),

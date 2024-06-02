@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pruebaborrar/presentation/screens/counter/counter_functions_screen.dart';
+import 'package:pruebaborrar/config/theme/app_theme.dart';
 
 void main() => runApp(const MyApp());
 
@@ -9,9 +9,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Material App',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.yellow),
-        home: const CounterFunctionsScreen());
+      title: 'Material App',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme(selectedColor: 3).theme(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Yes No App'),
+        ),
+        body: Center(
+          child: FilledButton(onPressed: () {}, child: const Text('Click me')),
+        ),
+      ),
+    );
   }
 }
