@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pruebaborrar/widgets/chat/her_message_bubble%20copy.dart';
 import 'package:pruebaborrar/widgets/chat/my_message_bubble.dart';
+import 'package:pruebaborrar/widgets/shared/message_field_box.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -45,7 +46,7 @@ class _ChatView extends StatelessWidget {
                     : const MyMessageBubble();
               },
             )),
-            const Text("fucking")
+            const MessageFieldBox()
           ],
         ),
       ),
