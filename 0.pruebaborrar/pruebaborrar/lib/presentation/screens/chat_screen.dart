@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
+import 'package:pruebaborrar/providers/chat_provider.dart';
 import 'package:pruebaborrar/widgets/chat/her_message_bubble%20copy.dart';
 import 'package:pruebaborrar/widgets/chat/my_message_bubble.dart';
 import 'package:pruebaborrar/widgets/shared/message_field_box.dart';
@@ -31,6 +33,8 @@ class ChatScreen extends StatelessWidget {
 class _ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final chatProvider = context.watch<ChatProvider>();
+
     return SafeArea(
       left: false,
       child: Padding(
