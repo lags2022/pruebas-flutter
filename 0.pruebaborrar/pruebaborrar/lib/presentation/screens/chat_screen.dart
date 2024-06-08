@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:pruebaborrar/domain/entities/message.dart';
 import 'package:pruebaborrar/providers/chat_provider.dart';
 import 'package:pruebaborrar/widgets/chat/her_message_bubble%20copy.dart';
 import 'package:pruebaborrar/widgets/chat/my_message_bubble.dart';
@@ -17,7 +18,7 @@ class ChatScreen extends StatelessWidget {
             padding: EdgeInsets.all(10.0),
             child: CircleAvatar(
               backgroundImage: NetworkImage(
-                  "https://cdn3d.iconscout.com/3d/free/preview/free-javascript-9294848-7577991.png?f=webp&h=700"),
+                  "https://depor.com/resizer/itBOxXvs2Qg4LcwWjt65EyrSdiY=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/YO7NG3WYMZC4ZB24LC24QNLILQ.jpg"),
             ),
           ),
           title: const Text(
@@ -43,11 +44,15 @@ class _ChatView extends StatelessWidget {
           children: [
             Expanded(
                 child: ListView.builder(
-              itemCount: 100,
+              itemCount: chatProvider.messageList.length,
               itemBuilder: (context, index) {
-                return (index % 2 == 0)
+                final message = chatProvider.messageList[index];
+
+                return (message.fromWho == FromWho.hers)
                     ? const HerMessageBubble()
-                    : const MyMessageBubble();
+                    : MyMessageBubble(
+                        message: message,
+                      );
               },
             )),
             const MessageFieldBox()
