@@ -1,3 +1,5 @@
+import 'package:pruebaborrar/domain/entities/message.dart';
+
 class YesNoModel {
   final String answer;
   final bool forced;
@@ -20,4 +22,9 @@ class YesNoModel {
         "forced": forced,
         "image": image,
       };
+
+  Message toMessageEntity() => Message(
+      text: answer == "yes" ? "Si" : "No",
+      fromWho: FromWho.hers,
+      imageUrl: image);
 }
