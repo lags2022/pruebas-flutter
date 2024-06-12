@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pruebaborrar/domain/entities/message.dart';
 import 'package:pruebaborrar/providers/chat_provider.dart';
-import 'package:pruebaborrar/widgets/chat/her_message_bubble%20copy.dart';
+import 'package:pruebaborrar/widgets/chat/her_message_bubble.dart';
 import 'package:pruebaborrar/widgets/chat/my_message_bubble.dart';
 import 'package:pruebaborrar/widgets/shared/message_field_box.dart';
 
