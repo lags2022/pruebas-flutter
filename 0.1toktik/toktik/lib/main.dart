@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme().getTheme(),
         home: Scaffold(
             appBar: AppBar(
-              title: const Text('Material App Bar'),
+              title: const Text('Tok tik'),
             ),
             body: const DiscoverScreen()),
       ),
